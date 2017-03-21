@@ -19,7 +19,7 @@ The minimal example uses
 2. Labels of these buttons as clickable links
 3. Absolute positioning
 
-Marginalia works with more than one side note, of course. The radio buttons need to have unique ids.
+Marginalia works with more than one side note, of course. The radio buttons need to have unique `id`s. Colours and transparencies are only there to visualise sizes, positions and transitions. If you comment `input { display: none; }` you can monitor the status of the radio button group.
 
 ### Enhanced example
 
@@ -29,13 +29,13 @@ Marginalia can easily be upgraded, e.g. with
 
 ### Adjustments
 
-Take care of the heights of column and side notes. Sides must disappear completely when inactive.
+Take care of the heights of column and side notes. Side notes must disappear behind the column completely when inactive.
 
 ##Limits
 
 This simple version works with the clickable labels placed as separate block *below the paragraph*.
 
-I have made up another solution Marginalia+ where the labels can be placed inline *inside the paragraph*.
+I have made up another solution SideNotes where labels can be placed inline *inside the paragraph*.
 
 ## To be done
 
@@ -43,6 +43,6 @@ I have made up another solution Marginalia+ where the labels can be placed inlin
 
 ## How it works
 
-Radio buttons make sure that none or just one side is active at any time. This keeps the reader focused at the main column. Neither Show and Hide labels nor the side notes can ever overlap.
+Radio buttons make sure that none or just one side is active at any time. This keeps the reader focused at the main column. Neither Show and Hide labels nor the side notes can ever overlap. This way a short main story can be complement with lots of additional information.
 
 Inactive side notes are hidden behind the column. They are placed top aligned with the relevant paragraph or div in the main column when active. A simple transition can make it obvious to the reader where it came from.
