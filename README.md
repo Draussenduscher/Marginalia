@@ -11,9 +11,31 @@ A (long) text has side notes, which should not clutter the view. Side notes are 
 
 ## Just HTML and CSS
 
+### Minimum example
+
 The minimal example uses
 
 1. Radio buttons (none or just one side note can be active)
 2. Labels of these buttons as clickable links
 
-This solution works with more than one side note, of course. The radio buttons need to have unique 
+Marginalia works with more than one side note, of course. The radio buttons need to have unique ids.
+
+### Enhanced example
+
+Marginalia can easily be upgraded, e.g. with
+
+- CSS transitions for z-index, opacity
+
+### Adjustments
+
+Take care of the heights of column and side notes. Sides must disappear completely when inactive.
+
+## To be done
+
+- Keyboard operation
+
+## How it works
+
+Radio buttons make sure that none or just one side is active at any time. This keeps the reader focused at the main column. Neither Show and Hide labels nor the side notes can ever overlap.
+
+Inactive side notes are hidden behind the column. They are placed top aligned with the relevant paragraph or div in the main column when active. A simple transition can make it obvious to the reader where it came from.
