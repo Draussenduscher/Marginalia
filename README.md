@@ -7,7 +7,7 @@ Side notes for long html pages. Can be shown one by one within the margin. Click
 
 ## Purpose
 
-A (long) text has side notes, which should not clutter the view. Side notes are hidden by default and can be shown one by one. Only one side can be shown at a time.
+A (long) text has side notes, which should not clutter the view. Side notes are hidden by default and can be shown one by one. Only one marginal note can be shown at a time.
 
 ## Just HTML and CSS
 
