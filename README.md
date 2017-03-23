@@ -19,7 +19,7 @@ The minimal example uses
 2. Labels of these buttons as clickable links
 3. Absolute positioning
 
-Marginalia works with more than one side note, of course. The radio buttons need to have unique `id`s. Colours and transparencies are only there to visualise sizes, positions and transitions. If you comment `input { display: none; }` you can monitor the status of the radio button group.
+Marginalia works with more than one side note, of course. The radio buttons need to have unique `id`s. Colours and transparencies are only there to visualise sizes, positions and transitions. If you comment `input { display: none; }` you can monitor the status of the radio buttons in the group.
 
 ### Enhanced example
 
