@@ -49,7 +49,7 @@ Inactive side notes are hidden behind the main column. They are placed in the ma
 
 ## Browser Support
 
-All CSS features used here are well support. So you should be on the safe side.
+All CSS features used here are well supported. So you should be on the safe side.
 
 ## License
 
