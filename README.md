@@ -46,3 +46,7 @@ I have made up another solution SideNotes where labels can be placed inline *ins
 Radio buttons make sure that none or just one marginal note is active at any time. This keeps the reader focused at the main column. Neither Show and Hide labels nor the side notes can ever overlap. This way a short main story can be complement with lots of additional information.
 
 Inactive side notes are hidden behind the main column. They are placed in the margin, top aligned with the relevant paragraph or div in the main column when active. A simple transition can make it obvious to the reader where it came from.
+
+## License
+
+No license. Free like fresh air.
