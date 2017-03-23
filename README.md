@@ -47,6 +47,10 @@ Radio buttons make sure that none or just one marginal note is active at any tim
 
 Inactive side notes are hidden behind the main column. They are placed in the margin, top aligned with the relevant paragraph or div in the main column when active. A simple transition can make it obvious to the reader where it came from.
 
+## Browser Support
+
+All CSS features used here are well support. So you should be on the safe side.
+
 ## License
 
 No license. Free like fresh air.
