@@ -5,6 +5,10 @@ Side notes for long html pages. Can be shown one by one within the margin. Click
 
 **Marginalien** (dt.) = Randnotizen, Randbemerkungen: auf dem Rand einer Buchseite oder eines Manuskripts platzierte Bemerkungen, die Kommentare, Hinweise oder Korrekturen zu Textstellen bieten (de.wikipedia.org)
 
+## Demo
+
+[Demo, minimal example on jsfiddle.net](https://jsfiddle.net/Draussenduscher/odjbLuh8/)
+
 ## Purpose
 
 A (long) text has side notes, which should not clutter the view. Side notes are hidden by default and can be shown one by one. Only one marginal note can be shown at a time.
@@ -20,10 +24,6 @@ The minimal example uses
 3. Absolute positioning
 
 Marginalia works with more than one side note, of course. The radio buttons need to have unique `id`s. Colours and transparencies are only there to visualise sizes, positions and transitions. If you comment `input { display: none; }` you can monitor the status of the radio buttons in the group.
-
-#### Demo
-
-[Demo, minimal example on jsfiddle.net](https://jsfiddle.net/Draussenduscher/odjbLuh8/)
 
 #### HTML and CSS files
 
