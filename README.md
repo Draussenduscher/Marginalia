@@ -61,7 +61,7 @@ label { color: green; cursor: pointer; }
 label[for^=show] { visibility: visible; } /* Initial states */
 label[for^=hide] { visibility: hidden; }
 
-input[id^=show]:checked ~ label[for^=show] { visibility: hidden; } /* Toggle visibility of labels when checked */
+input[id^=show]:checked ~ label[for^=show] { visibility: hidden; } /* Toggle checked labels visibility */
 input[id^=show]:checked ~ label[for^=hide] { visibility: visible; }
 
 input:checked ~ .side-note { right: calc(-1 * ((100% - 60%) / .6)); }
