@@ -11,7 +11,7 @@ A (long) text has side notes, which should not clutter the view. Side notes are 
 
 ## Just HTML and CSS
 
-### Minimum example
+### Minimal example
 
 The minimal example uses
 
@@ -20,6 +20,10 @@ The minimal example uses
 3. Absolute positioning
 
 Marginalia works with more than one side note, of course. The radio buttons need to have unique `id`s. Colours and transparencies are only there to visualise sizes, positions and transitions. If you comment `input { display: none; }` you can monitor the status of the radio buttons in the group.
+
+[Demo, minimal example on jsfiddle.net](https://jsfiddle.net/Draussenduscher/odjbLuh8/)
+
+<iframe width="100%" height="300" src="//jsfiddle.net/Draussenduscher/odjbLuh8/embedded/html,css,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 ### Enhanced example
 
@@ -31,7 +35,7 @@ Marginalia can easily be upgraded, e.g. with
 
 Take care of the heights of column and side notes. Side notes must disappear behind the column completely when inactive.
 
-##Limits
+## Limits
 
 This simple version works with the clickable labels placed as separate block *below the paragraph*.
 
