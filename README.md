@@ -23,6 +23,52 @@ Marginalia works with more than one side note, of course. The radio buttons need
 
 [Demo, minimal example on jsfiddle.net](https://jsfiddle.net/Draussenduscher/odjbLuh8/)
 
+```html
+<article>
+  <div class="text-with-side-note">
+    <h2>Text with Side Note 1</h2>
+    <p>...</p>
+    <input type="radio" name="side-notes" id="show-0"> <label for="show-0">Show Side Note</label>
+    <div class="side-note">
+      <h3>Side Note A</h3>
+      <p></p>
+    </div>
+    <input type="radio" name="side-notes" id="hide-0" checked> <label for="hide-0">Hide Side Note</label>
+    <h3>Next Header</h3>
+ </div>
+</article>
+```
+
+HTML example, `input` and `label` are placed before and after the side note itself.
+
+```css
+article { width: 60%; }
+
+/* Light grey for distinction, opacity for demonstration only */
+.text-with-side-note { position: relative; background-color: hsla(0, 0%, 90%, .8); }
+
+.side-note { position: absolute; right: 0; top: 0; z-index: -1; 
+	width: calc((100% - 60%) / (60 / 100)); /* Width related to containing main block */
+	background-color: hsl(120, 20%, 90%); } /* Light green for distinction */
+
+/* Buttons hidden; comment this to monitor status of buttons */
+input { display: none; }
+
+label { color: green; cursor: pointer; }
+
+/* Initial states */
+label[for^=show] { visibility: visible; }
+label[for^=hide] { visibility: hidden; }
+
+/* Toggle visibility of labels when checked */
+input[id^=show]:checked ~ label[for^=show] { visibility: hidden; }
+input[id^=show]:checked ~ label[for^=hide] { visibility: visible; }
+
+input:checked ~ .side-note { right: calc(-1 * ((100% - 60%) / .6)); }
+```
+
+CSS
+
 ## Enhanced example
 
 Marginalia can easily be upgraded, e.g. with
