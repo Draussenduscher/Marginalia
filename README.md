@@ -1,5 +1,5 @@
 # Marginalia
-Side notes for long html pages. Can be shown one by one within the margin. Click text labels *below the paragraph* to show side note.
+Side notes for (long) html pages. Can be shown one by one within the margin. Click text labels *below the paragraph* to show side note.
 
 **Marginalia** (engl.) = side notes: marks made in the margins of a book or other document. They may be scribbles, comments, glosses (annotations), critiques, doodles, or illuminations (en.wikipedia.org)
 
