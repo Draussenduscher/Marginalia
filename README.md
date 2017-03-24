@@ -64,7 +64,7 @@ label[for^=hide] { visibility: hidden; }
 input[id^=show]:checked ~ label[for^=show] { visibility: hidden; } /* Toggle checked labels visibility */
 input[id^=show]:checked ~ label[for^=hide] { visibility: visible; }
 
-input:checked ~ .side-note { right: calc(-1 * ((100% - 60%) / .6)); }
+input[id^=show]:checked ~ .side-note { right: calc(-1 * ((100% - 60%) / .6)); }
 ```
 
 CSS
