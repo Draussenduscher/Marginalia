@@ -48,24 +48,20 @@ HTML example, `input` and `label` are placed on the same level as the side note 
 ```css
 article { width: 60%; }
 
-/* Light grey for distinction, opacity for demonstration only */
 .text-with-side-note { position: relative; background-color: hsla(0, 0%, 90%, .8); }
 
 .side-note { position: absolute; right: 0; top: 0; z-index: -1; 
 	width: calc((100% - 60%) / (60 / 100)); /* Width related to containing main block */
-	background-color: hsl(120, 20%, 90%); } /* Light green for distinction */
+	background-color: hsl(120, 20%, 90%); }
 
-/* Buttons hidden; comment this to monitor status of buttons */
-input { display: none; }
+input { display: none; } /* Buttons hidden */
 
 label { color: green; cursor: pointer; }
 
-/* Initial states */
-label[for^=show] { visibility: visible; }
+label[for^=show] { visibility: visible; } /* Initial states */
 label[for^=hide] { visibility: hidden; }
 
-/* Toggle visibility of labels when checked */
-input[id^=show]:checked ~ label[for^=show] { visibility: hidden; }
+input[id^=show]:checked ~ label[for^=show] { visibility: hidden; } /* Toggle visibility of labels when checked */
 input[id^=show]:checked ~ label[for^=hide] { visibility: visible; }
 
 input:checked ~ .side-note { right: calc(-1 * ((100% - 60%) / .6)); }
