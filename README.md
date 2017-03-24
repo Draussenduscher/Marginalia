@@ -23,8 +23,6 @@ Marginalia works with more than one side note, of course. The radio buttons need
 
 [Demo, minimal example on jsfiddle.net](https://jsfiddle.net/Draussenduscher/odjbLuh8/)
 
-<script async src="//jsfiddle.net/Draussenduscher/odjbLuh8/embed/html,css,result/"></script>
-
 ## Enhanced example
 
 Marginalia can easily be upgraded, e.g. with
