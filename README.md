@@ -5,13 +5,13 @@ Side notes for long html pages. Can be shown one by one within the margin. Click
 
 **Marginalien** (dt.) = Randnotizen, Randbemerkungen: auf dem Rand einer Buchseite oder eines Manuskripts platzierte Bemerkungen, die Kommentare, Hinweise oder Korrekturen zu Textstellen bieten (de.wikipedia.org)
 
-## Demo
-
-[Demo, minimal example on jsfiddle.net](https://jsfiddle.net/Draussenduscher/odjbLuh8/)
-
 ## Purpose
 
 A (long) text has side notes, which should not clutter the view. Side notes are hidden by default and can be shown one by one. Only one marginal note can be shown at a time.
+
+## Demo
+
+[Demo, minimal example on jsfiddle.net](https://jsfiddle.net/Draussenduscher/odjbLuh8/)
 
 ## Just HTML and CSS
 
