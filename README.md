@@ -23,7 +23,7 @@ Marginalia works with more than one side note, of course. The radio buttons need
 
 [Demo, minimal example on jsfiddle.net](https://jsfiddle.net/Draussenduscher/odjbLuh8/)
 
-<iframe width="100%" height="300" src="//jsfiddle.net/Draussenduscher/odjbLuh8/embedded/html,css,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<script async src="//jsfiddle.net/Draussenduscher/odjbLuh8/embed/html,css,result/"></script>
 
 ### Enhanced example
 
