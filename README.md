@@ -21,7 +21,11 @@ The minimal example uses
 
 Marginalia works with more than one side note, of course. The radio buttons need to have unique `id`s. Colours and transparencies are only there to visualise sizes, positions and transitions. If you comment `input { display: none; }` you can monitor the status of the radio buttons in the group.
 
+#### Demo
+
 [Demo, minimal example on jsfiddle.net](https://jsfiddle.net/Draussenduscher/odjbLuh8/)
+
+#### HTML and CSS files
 
 ```html
 <article>
@@ -39,7 +43,7 @@ Marginalia works with more than one side note, of course. The radio buttons need
 </article>
 ```
 
-HTML example, `input` and `label` are placed before and after the side note itself.
+HTML example, `input` and `label` are placed on the same level as the side note itself.
 
 ```css
 article { width: 60%; }
