@@ -1,5 +1,6 @@
 # Marginalia
-Side notes for (long) html pages. Can be shown one by one within the margin. Click text labels *below the paragraph* to show side note.
+
+Side notes for (long) html pages. Can be shown one by one within the margin. Click on text labels to show side note.
 
 **Marginalia** (engl.) = side notes: marks made in the margins of a book or other document. They may be scribbles, comments, glosses (annotations), critiques, doodles, or illuminations (en.wikipedia.org)
 
@@ -7,19 +8,102 @@ Side notes for (long) html pages. Can be shown one by one within the margin. Cli
 
 ## Purpose
 
-A main story has side notes, which should not clutter the view. Side notes are hidden by default and only one marginal note can be shown at a time.
+A main story has side notes, which should not clutter the view. Side notes are hidden by default and only one side note can be shown at a time. This keeps the reader focused at the text in the main column. 
 
 ## How it works
 
-Radio buttons make sure that none or just one marginal note is active at any time. This keeps the reader focused at the main column. Neither Show and Hide labels nor the side notes can ever overlap. This way a short main story can be complemented with lots of additional information.
+Radio buttons make sure that none or just one marginal note is active at any time. 
 
-Inactive side notes are hidden behind the main column. They are placed in the margin, top aligned with the relevant paragraph or div in the main column when active. A simple transition can make it obvious to the reader where it came from.
+*Show labels* are visible when the *side note* is hidden. *Hide labels* are visible when the *side note* is shown. (I.e. you can never click on anything that will call the same page again.)
+
+*Show labels* and *Hide labels* are text, laid out one after the other. They never overlap. (I don't like »chameleon« buttons.)
+
+*Side notes* are shown one by one, they never overlap. This keeps the viewport clear. A short main story can be complemented with lots of additional information.
+
+Inactive *side notes* are hidden (behind the main column). Active *side notes* are placed in the margin, top aligned with the respective paragraph or div in the main column. A simple transition can make it obvious to the reader where it came from.
 
 ## Demo
 
 [Demo, minimal example on jsfiddle.net](https://jsfiddle.net/Draussenduscher/odjbLuh8/)
 
 ## Just HTML and CSS
+
+### Some background
+
+CSS selectors in general are limited to (following) siblings and children/descendants. (You can neither »see« parents nor preceding siblings.)
+
+`input` is a so called *empty element*, it must not contain anything, can never have children. It can have siblings. This means that with `input` you can only toggle (following) block elements on the same level or children of (following) block elements on the same level. 
+
+We want the `side note` to be a div, a block element. `input` and `side note` will live on the same level, within the block `.text-with-side-notes`. To be addressed with CSS selectors 
+
+- `side note` must be a (following) sibling of `input`
+
+`input` and `label` are just friends, they can live anywhere within the document. Both are connected through input's `id`and label's `for` attribute. 
+
+To be addressed with a CSS selector
+
+- `label` can be a (following) sibling of `input` or a
+-  child of a (following) sibling of `input`.
+
+This directly leads to two variants:
+
+####  Variant 1: Labels as block elements
+
+`Label` is a block element before, between or after the main column paragraphs. `Input` precedes `label` (on the same level). `div.side-note` follows the `input` (on the same level).
+
+In other words: `input` toggles 
+
+- its sibling `label` and
+- its sibling  `div.side-note`. 
+
+```html
+<article>
+  <div class="text-with-side-note">
+    <p>…</p>
+    <input type="radio" name="side-notes" id="show-0"> <label for="show-0">Show Side Note</label>
+    <input type="radio" name="side-notes" id="hide-0" checked> <label for="hide-0">Hide Side Note</label>
+    <div class="side-note">
+      <p>…</p>
+    </div>
+    <p>…</p>
+ </div>
+</article>
+```
+
+### Variant 2: Labels as inline elements
+
+`Label`s are inline elements, i.e. they can be text anywhere within the main column paragraphs. `Input`s precede the `label`s (on a higher level). `div.side-note` follows the `label`s (on the same, higher level as the `label`s).
+
+In other words: `input` toggles
+
+- its child of a following sibling `label` and
+- its following sibling `.div.side-note`.
+
+It makes no difference which comes first.
+
+```html
+<article>
+  <div class="text-with-side-note">
+    <input type="radio" name="side-notes" id="show-0">
+    <input type="radio" name="side-notes" id="hide-0">
+    <p>…
+     <label for="show-0">Show Side Note</label>
+     <label for="hide-0">Hide Side Note</label>
+    …</p>
+    <div class="side-note">
+      <p>…</p>
+    </div>
+    <p>…</p>
+ </div>
+</article>
+```
+
+Both variants can be enabled with non-overlapping CSS rules, they can happily live together.
+
+The containing `div.text-with-side-note` has two functions:
+
+- The side note is top aligned with it.
+- It limits the scope CSS selectors, allowing for very simple CSS rules (you could alternatively place inputs, labels and side notes anywhere if you assign unique `id` and `for` values correctly, not very appealing.)
 
 ### Minimal example
 
@@ -55,8 +139,8 @@ article { width: 60%; }
 .text-with-side-note { position: relative; background-color: hsla(0, 0%, 90%, .8); }
 
 .side-note { position: absolute; right: 0; top: 0; z-index: -1; 
-	width: calc((100% - 60%) / (60 / 100)); /* Width related to containing main block */
-	background-color: hsl(120, 20%, 90%); }
+  width: calc((100% - 60%) / (60 / 100)); /* Width related to containing main block */
+  background-color: hsl(120, 20%, 90%); }
 
 input { display: none; } /* Buttons hidden */
 
@@ -83,17 +167,11 @@ CSS
 
 Take care of the heights of column and side notes. Side notes must disappear behind the column completely when inactive.
 
-## Enhanced it
+## Enhance it
 
 Marginalia can easily be upgraded, e.g. with
 
 - CSS transitions for z-index, opacity
-
-## Limits
-
-This simple version works with the clickable labels placed as separate block *on the same level with the containing paragraph*.
-
-I have made up another solution SideNotes where labels can be placed inline *inside the paragraph*.
 
 ## To be done
 
