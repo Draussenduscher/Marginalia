@@ -1,10 +1,8 @@
 # Marginalia
 
-Side notes for (long) html pages. Can be shown one by one within the margin. Click on text labels to show side note.
+Side notes for (long) HTML pages. Can be shown one by one within the margin. Click on text labels to show side note.
 
 **Marginalia** (engl.) = side notes: marks made in the margins of a book or other document. They may be scribbles, comments, glosses (annotations), critiques, doodles, or illuminations (en.wikipedia.org)
-
-**Marginalien** (dt.) = Randnotizen, Randbemerkungen: auf dem Rand einer Buchseite oder eines Manuskripts platzierte Bemerkungen, die Kommentare, Hinweise oder Korrekturen zu Textstellen bieten (de.wikipedia.org)
 
 ## Purpose
 
@@ -20,7 +18,7 @@ Radio buttons make sure that none or just one marginal note is active at any tim
 
 *Side notes* are shown one by one, they never overlap. This keeps the viewport clear. A short main story can be complemented with lots of additional information.
 
-Inactive *side notes* are hidden (behind the main column). Active *side notes* are placed in the margin, top aligned with the respective paragraph or div in the main column. A simple transition can make it obvious to the reader where it came from.
+Inactive *side notes* are hidden (behind the main column). Active *side notes* are placed in the margin, top aligned with the respective paragraph or div in the main column. A simple transition can make it obvious to the reader where it belongs to.
 
 ## Demo
 
@@ -32,9 +30,9 @@ Inactive *side notes* are hidden (behind the main column). Active *side notes* a
 
 CSS selectors in general are limited to (following) siblings and children/descendants. (You can neither »see« parents nor preceding siblings.)
 
-`input` is a so called *empty element*, it must not contain anything, can never have children. It can have siblings. This means that with `input` you can only toggle (following) block elements on the same level or children of (following) block elements on the same level. 
+`input` is a so called *empty element*, it must not contain anything, can never have children. It can have siblings. This means that with `input` you can only toggle (following) elements on the same level or children of (following) block elements on the same level. 
 
-We want the `side note` to be a div, a block element. `input` and `side note` will live on the same level, within the block `.text-with-side-notes`. To be addressed with CSS selectors 
+We want the `side note` to be a div, a block element. `input` and `side note` will live on the same level, within the block `.text-with-side-note`. To be addressed with CSS selectors 
 
 - `side note` must be a (following) sibling of `input`
 
@@ -47,9 +45,9 @@ To be addressed with a CSS selector
 
 This directly leads to two variants:
 
-####  Variant 1: Labels as block elements
+####  Variant 1: Label as block element
 
-`Label` is a block element before, between or after the main column paragraphs. `Input` precedes `label` (on the same level). `div.side-note` follows the `input` (on the same level).
+`label` is a block element before, between or after the main column paragraphs. `input` precedes `label` (on the same level). `div.side-note` follows the `input` (on the same level).
 
 In other words: `input` toggles 
 
@@ -70,9 +68,9 @@ In other words: `input` toggles
 </article>
 ```
 
-### Variant 2: Labels as inline elements
+### Variant 2: Label as inline element
 
-`Label`s are inline elements, i.e. they can be text anywhere within the main column paragraphs. `Input`s precede the `label`s (on a higher level). `div.side-note` follows the `label`s (on the same, higher level as the `label`s).
+`label` is an inline element, it can be text anywhere within the main column paragraphs. `input` precedes the `label` (on a higher level). `div.side-note` follows the `label` (on the same, higher level as the `label`).
 
 In other words: `input` toggles
 
@@ -105,6 +103,8 @@ The containing `div.text-with-side-note` has two functions:
 - The side note is top aligned with it.
 - It limits the scope CSS selectors, allowing for very simple CSS rules (you could alternatively place inputs, labels and side notes anywhere if you assign unique `id` and `for` values correctly, not very appealing.)
 
+`div.text-with-side-note` can host more than one side note. In this case I would add `class="one"`, `class="two"` etc. to the related `input`, `label` and `.side-note` tags.
+
 ### Minimal example
 
 The minimal example uses
@@ -113,7 +113,7 @@ The minimal example uses
 2. Labels of these buttons as clickable links
 3. Absolute positioning
 
-Marginalia works with more than one side note, of course. The radio buttons need to have unique `id`s. Colours and transparencies are only there to visualise sizes, positions and transitions. If you comment `input { display: none; }` you can monitor the status of the radio buttons in the group.
+Marginalia works with more than one side note, of course. The radio buttons need to have unique `id`s (within the radio button group). Colours and transparencies are only there to visualise sizes, positions and transitions. If you comment `input { display: none; }` you can monitor the status of the radio buttons in the group.
 
 ```html
 <article>
@@ -160,12 +160,12 @@ CSS
 ## How to use
 
 - Add the class `text-with-side-note` to the containing block. The side note will be top aligned with this block.
-- Place `input`s and `label`s between paragraphs and on the same level with them (not within paragraphs)
-- The side note div must be below the `input`s and `label`s, on the same level as well
+- Place `input`s and `label`s in or between paragraphs (see above)
+- The side note div must be below the `input`s , (see above)
 
 ## Adjustments
 
-Take care of the heights of column and side notes. Side notes must disappear behind the column completely when inactive.
+Take care of the heights of main column and side notes. Side notes must disappear behind the column completely when inactive.
 
 ## Enhance it
 
