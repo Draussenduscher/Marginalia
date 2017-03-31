@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Text with Side Note</title>
+	<meta name="generator" content="BBEdit 11.6" />
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+	<article>
+		<div class="text-with-side-note">
+			<h2>Text with Side Note (block)</h2>
+			<p>Set the first »Hide« button to »Checked«. This avoids an undefined state of the radio button group. Checking a first input/label will override this initial status.</p>
+			<input type="radio" name="side-notes" id="show-0"> <label for="show-0">Show Side Note</label>
+			<input type="radio" name="side-notes" id="hide-0" checked> <label for="hide-0">Hide Side Note</label>
+			<div class="side-note">
+				<h3>Side Note A</h3>
+				<p>This side note is shorter than the containing block.</p>
+			</div>
+			<h3>Next Header</h3>
+		</div>
+		<div class="text-with-side-note">
+			<h2>Text with Side Note (inline)</h2>
+			<input type="radio" name="side-notes" id="show-1"> 
+			<input type="radio" name="side-notes" id="hide-1"> 
+			<div class="side-note">
+				<h3>Side Note B</h3>
+				<p>This side is taller than the containing block. Take care for the best height.</p>
+				<p>Marginalia can easily be upgraded, e.g. with CSS transitions for z-index and opacity.</p>
+				<p>Calculate the width of the side note with respect to the containing block.</p>
+			</div>
+			<p>Only the button/link that leads to a <em>new</em> state is shown.
+				<label for="show-1">Show Side Note</label>
+				<label for="hide-1">Hide Side Note</label>
+			</p>
+			<h3>Header after Side Note</h3>
+		</div>
+	</article>
+</main>
+</body>
+</html>

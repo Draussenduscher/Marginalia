@@ -1,0 +1,23 @@
+article { width: 60%; }
+
+.text-with-side-note { position: relative; background-color: hsla(0, 0%, 90%, .8); } /* Light grey for distinction, opacity for demonstration only */
+
+.side-note { position: absolute; right: 0; top: 0; z-index: -1; 
+	width: calc((100% - 60%) / (60 / 100)); /* Width related to containing main block */
+	background-color: hsl(120, 20%, 90%); } /* Light green for distinction */
+
+input { display: none; } /* Buttons hidden; comment this to monitor status of buttons */
+
+label { color: green; cursor: pointer; }
+
+label[for^=show] { visibility: visible; } /* Initial states */
+label[for^=hide] { visibility: hidden; }
+
+/* Toggle visibility of labels when checked */
+input[id^=show]:checked ~ label[for^=show] { visibility: hidden; } /* Case 1: labels are siblings of paragraphs */
+input[id^=show]:checked ~ label[for^=hide] { visibility: visible; }
+
+input[id^=show]:checked ~ p label[for^=show] { visibility: hidden; } /* Case 2: labels are children of paragraphs */
+input[id^=show]:checked ~ p label[for^=hide] { visibility: visible; }
+
+input[id^=show]:checked ~ .side-note { right: calc(-1 * ((100% - 60%) / (60 / 100))); } /* Cases 1 and 2 */
