@@ -1,3 +1,5 @@
+/* https://github.com/Draussenduscher/Marginalia */
+
 article { width: 60%; }
 
 .text-with-side-note { position: relative; background-color: hsla(0, 0%, 90%, .8); } /* Light grey for distinction, opacity for demonstration only */
